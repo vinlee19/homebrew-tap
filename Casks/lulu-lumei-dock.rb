@@ -9,11 +9,12 @@ cask "lulu-lumei-dock" do
 
   app "Eureka.app"
 
-  # 本版为 ad-hoc 签名（未公证）→ 安装后去掉隔离属性，免 Gatekeeper 拦截
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Eureka.app"]
-  end
+  caveats <<~EOS
+    lulu-lumei-dock 为 ad-hoc 签名（未做 Apple 公证）。首次打开若被 Gatekeeper 拦截，任选其一：
+      • 右键点按「应用程序」里的 Eureka.app →「打开」→ 再次「打开」；
+      • 或在终端执行：
+          xattr -dr com.apple.quarantine "#{appdir}Eureka.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/Eureka",
