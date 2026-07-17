@@ -1,6 +1,6 @@
 cask "lulu-lumei-dock" do
-  version "0.1.2"
-  sha256 "e26e14320db7c9656193099131e5df0417dbbcd37c343c0765f26f3e5b243553"
+  version "0.1.3"
+  sha256 "fac6869db09294aba968c8231bf791c5b1a9ccc8aaa99385046ae12c0fd6283a"
 
   url "https://github.com/vinlee19/lulu-lumei-dock/releases/download/v#{version}/lulu-lumei-dock-#{version}.zip"
   name "lulu-lumei-dock"
